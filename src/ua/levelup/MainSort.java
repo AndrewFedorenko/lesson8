@@ -22,12 +22,14 @@ public class MainSort {
         while (variant==1 || variant==2) {
             System.out.println("Input 1 to sort SELECTION or 2 to sort BUBBLE or any other number to quit:");
             variant = scanner.nextInt();
-            sorted = sorter.SortArray(unsorted, variant);
+
             switch (variant){
                 case 1:
+                    sorted = sorter.sortArray(unsorted, new SortSelection());
                     arrayUtils.printArray(sorted, "SELECTION variant: ");
                     break;
                 case 2:
+                    sorted = sorter.sortArray(unsorted, new SortBubble());
                     arrayUtils.printArray(sorted, "BUBBLE variant: ");
                     break;
             }
